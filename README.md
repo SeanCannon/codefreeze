@@ -1,4 +1,4 @@
-![GitHub Logo](/logo.png)
+![GitHub Logo](https://raw.githubusercontent.com/seancannon/codefreeze/HEAD/logo.png)
 
 # CodeFreeze
 ### Simple resources to help enforce code freeze schedules.
@@ -24,10 +24,12 @@ CODE_FREEZE_BI_WEEKLY_WEEK=odd
 CODE_FREEZE_TIMEZONE=America/New_York
 ```
 3. On your next pull request, you should see the action in the pull request build status:
-![Build Success](/screenshotSuccess.png)
+
+![Build Success](https://raw.githubusercontent.com/seancannon/codefreeze/HEAD/screenshotSuccess.png | width=600)
 
 If code freeze is in effect, the previous screen will show that the action did not pass, and the details will look like this: 
-![Build Fail](/screenshotError.png)
+
+![Build Fail](https://raw.githubusercontent.com/seancannon/codefreeze/HEAD/screenshotError.png | width=600)
 
 ### More details
 

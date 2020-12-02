@@ -8,3 +8,4 @@
  - 1.0.7 - fix conditional bug
  - 1.0.8 - fix logical bug
  - 1.0.9 - enhance readme and rename yml file
+ - 1.0.10 - update readme
