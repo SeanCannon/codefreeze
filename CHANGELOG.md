@@ -1,0 +1,9 @@
+ - 1.0.0 - initial commit
+ - 1.0.1 - fix bi-weekly bug
+ - 1.0.2 - enhance code freeze error message
+ - 1.0.3 - add names to workflow steps
+ - 1.0.4 - remove 1.0.0 lock on action yml
+ - 1.0.5 - add support for timezones
+ - 1.0.6 - fix error message minutes
+ - 1.0.7 - fix conditional bug
+ - 1.0.8 - fix logical bug

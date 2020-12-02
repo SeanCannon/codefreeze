@@ -43,8 +43,8 @@ if (codeFreezeBiWeekly) {
 }
 
 if (now.isBetween(codeFreezeBeginMoment, codeFreezeEndMoment)) {
-  process.exit(0);
-} else {
   console.error(codeFreezeErrorMessage(now, codeFreezeBeginMoment, codeFreezeEndMoment))
   process.exit(1);
+} else {
+  process.exit(0);
 }
