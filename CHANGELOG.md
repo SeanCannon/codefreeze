@@ -7,3 +7,4 @@
  - 1.0.6 - fix error message minutes
  - 1.0.7 - fix conditional bug
  - 1.0.8 - fix logical bug
+ - 1.0.9 - enhance readme and rename yml file
