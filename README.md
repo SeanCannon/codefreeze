@@ -44,6 +44,7 @@ CODE_FREEZE_BI_WEEKLY_WEEK=odd
  - 1.0.1 - fix bi-weekly bug
  - 1.0.2 - enhance code freeze error message
  - 1.0.3 - add names to workflow steps
+ - 1.0.4 - remove 1.0.0 lock on action yml
 
 # PLANNED ENHANCEMENTS
  - Support multiple code freezes per week

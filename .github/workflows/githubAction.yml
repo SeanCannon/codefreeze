@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install CodeFreeze
-        run: npm install -g moment codefreeze@1.0.0 && npm list -g
+        run: npm install -g moment codefreeze && npm list -g
       - name: Check CodeFreeze Schedule
         run: |
           set -a
