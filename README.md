@@ -1,7 +1,7 @@
+![GitHub Logo](/logo.png)
+
 # CodeFreeze
 ### Simple resources to help enforce code freeze schedules.
-
-![GitHub Logo](/logo.png)
 
 ##### This package helps enforce code freeze schedules directly with Github Actions or indirectly with the CI tool of your choice.
 
@@ -53,6 +53,7 @@ CODE_FREEZE_BI_WEEKLY_WEEK=odd
  - 1.0.4 - remove 1.0.0 lock on action yml
  - 1.0.5 - add support for timezones
  - 1.0.6 - fix error message minutes
+ - 1.0.7 - fix conditional bug
 
 # PLANNED ENHANCEMENTS
  - Support multiple code freezes per week

@@ -39,12 +39,12 @@ if (codeFreezeBiWeekly) {
         isWeekEven = !isWeekOdd;
   if ((codeFreezeBiWeeklyOdd && isWeekEven) || (codeFreezeBiWeeklyEven && isWeekOdd)) {
     process.exit(0);
-  } else {
-    console.error(codeFreezeErrorMessage(now, codeFreezeBeginMoment, codeFreezeEndMoment))
-    process.exit(1);
   }
 }
 
 if (now.isBetween(codeFreezeBeginMoment, codeFreezeEndMoment)) {
   process.exit(0);
+} else {
+  console.error(codeFreezeErrorMessage(now, codeFreezeBeginMoment, codeFreezeEndMoment))
+  process.exit(1);
 }
