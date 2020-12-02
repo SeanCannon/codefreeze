@@ -8,7 +8,7 @@ const days     = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 const timezone = process.env.CODE_FREEZE_TIMEZONE || 'America/Los_Angeles';
 
 validate();
-const codeFreezeErrorMessage     = (now, begin, end) => `Code freeze in effect: Today (${now.format('MM/DD hh:mm A')}) is between ${begin.format('MM/DD hh:mm A')} and ${end.format('MM/DD hh:mm A')}`;
+const codeFreezeErrorMessage     = (now, begin, end) => `Code freeze in effect: Today (${now.format('MM/DD hh:mm A')}) is between ${begin.format('MM/DD hh:00 A')} and ${end.format('MM/DD hh:00 A')}`;
 const codeFreezeOverrideFrozen   = process.env.CODE_FREEZE_OVERRIDE === 'frozen';
 const codeFreezeOverrideUnfrozen = process.env.CODE_FREEZE_OVERRIDE === 'unfrozen';
 const codeFreezeBiWeekly         = process.env.CODE_FREEZE_BI_WEEKLY === 'true';

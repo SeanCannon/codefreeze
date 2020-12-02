@@ -52,6 +52,7 @@ CODE_FREEZE_BI_WEEKLY_WEEK=odd
  - 1.0.3 - add names to workflow steps
  - 1.0.4 - remove 1.0.0 lock on action yml
  - 1.0.5 - add support for timezones
+ - 1.0.6 - fix error message minutes
 
 # PLANNED ENHANCEMENTS
  - Support multiple code freezes per week
