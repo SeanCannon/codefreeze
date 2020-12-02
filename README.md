@@ -13,6 +13,12 @@ CODE_FREEZE_DAY_END      # Case-sensitive day of the week the code freeze starts
 CODE_FREEZE_HOUR_END     # Numeric hour of the day the code freeze begins, 0-23.  Example: "9" would be 9:00AM
 ```
 
+The script timezone defaults to `'America/Los_Angeles'` but you can override : 
+```bash 
+CODE_FREEZE_TIMEZONE=America/Los_Angeles
+```
+You must use one of the supported [moment.js timezones](https://momentjs.com/timezone/docs/#/using-timezones/getting-zone-names/)
+
 If you have a bi-weekly sprint, you can enforce this script on odd or even weeks : 
 ```bash 
 CODE_FREEZE_BI_WEEKLY=true       # "true" or nothing. Just omit this variable completely to enforce weekly code freezes
@@ -45,6 +51,7 @@ CODE_FREEZE_BI_WEEKLY_WEEK=odd
  - 1.0.2 - enhance code freeze error message
  - 1.0.3 - add names to workflow steps
  - 1.0.4 - remove 1.0.0 lock on action yml
+ - 1.0.5 - add support for timezones
 
 # PLANNED ENHANCEMENTS
  - Support multiple code freezes per week

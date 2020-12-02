@@ -1,10 +1,11 @@
 'use strict';
 
-const moment = require('moment');
+const moment = require('moment-timezone');
 
 const validate = require('./validate');
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const days     = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const timezone = process.env.CODE_FREEZE_TIMEZONE || 'America/Los_Angeles';
 
 validate();
 const codeFreezeErrorMessage     = (now, begin, end) => `Code freeze in effect: Today (${now.format('MM/DD hh:mm A')}) is between ${begin.format('MM/DD hh:mm A')} and ${end.format('MM/DD hh:mm A')}`;
@@ -17,12 +18,12 @@ const codeFreezeBeginDay         = days.indexOf(process.env.CODE_FREEZE_DAY_BEGI
 const codeFreezeBeginHour        = parseInt(process.env.CODE_FREEZE_HOUR_BEGIN, 10);
 const codeFreezeEndDay           = days.indexOf(process.env.CODE_FREEZE_DAY_END);
 const codeFreezeEndHour          = parseInt(process.env.CODE_FREEZE_HOUR_END, 10);
-const now                        = moment();
+const now                        = moment().tz(timezone);
 
-const codeFreezeBeginMoment = moment().day(codeFreezeBeginDay).hour(codeFreezeBeginHour);
+const codeFreezeBeginMoment = moment().tz(timezone).day(codeFreezeBeginDay).hour(codeFreezeBeginHour);
 const codeFreezeEndMoment   = (codeFreezeBeginDay < codeFreezeEndDay) ?
-  moment().day(codeFreezeEndDay).hour(codeFreezeEndHour) :
-  moment().day(codeFreezeEndDay).add(1, 'weeks').hour(codeFreezeEndHour);
+  moment().tz(timezone).day(codeFreezeEndDay).hour(codeFreezeEndHour) :
+  moment().tz(timezone).day(codeFreezeEndDay).add(1, 'weeks').hour(codeFreezeEndHour);
 
 if (codeFreezeOverrideFrozen) {
   console.error('Code freeze full override in effect. All merges frozen.');
@@ -34,7 +35,7 @@ if (codeFreezeOverrideUnfrozen) {
 }
 
 if (codeFreezeBiWeekly) {
-  const isWeekOdd  = moment().week() % 2 === 1,
+  const isWeekOdd  = moment().tz(timezone).week() % 2 === 1,
         isWeekEven = !isWeekOdd;
   if ((codeFreezeBiWeeklyOdd && isWeekEven) || (codeFreezeBiWeeklyEven && isWeekOdd)) {
     process.exit(0);

@@ -1,6 +1,6 @@
 {
   "name": "codefreeze",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple resources to help enforce code freeze schedules.",
   "repository": {
     "type": "git",
@@ -16,6 +16,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.29.1"
+    "moment-timezone": "^0.5.32"
   }
 }
