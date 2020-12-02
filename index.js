@@ -7,7 +7,7 @@ const validate = require('./validate');
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 validate();
-const codeFreezeErrorMessage     = 'Code freeze in effect';
+const codeFreezeErrorMessage     = (now, begin, end) => `Code freeze in effect: Today (${now.format('MM/DD hh:mm A')}) is between ${begin.format('MM/DD hh:mm A')} and ${end.format('MM/DD hh:mm A')}`;
 const codeFreezeOverrideFrozen   = process.env.CODE_FREEZE_OVERRIDE === 'frozen';
 const codeFreezeOverrideUnfrozen = process.env.CODE_FREEZE_OVERRIDE === 'unfrozen';
 const codeFreezeBiWeekly         = process.env.CODE_FREEZE_BI_WEEKLY === 'true';
@@ -25,7 +25,7 @@ const codeFreezeEndMoment   = (codeFreezeBeginDay < codeFreezeEndDay) ?
   moment().day(codeFreezeEndDay).add(1, 'weeks').hour(codeFreezeEndHour);
 
 if (codeFreezeOverrideFrozen) {
-  console.error(codeFreezeErrorMessage);
+  console.error('Code freeze full override in effect. All merges frozen.');
   process.exit(1);
 }
 
@@ -38,6 +38,9 @@ if (codeFreezeBiWeekly) {
         isWeekEven = !isWeekOdd;
   if ((codeFreezeBiWeeklyOdd && isWeekEven) || (codeFreezeBiWeeklyEven && isWeekOdd)) {
     process.exit(0);
+  } else {
+    console.error(codeFreezeErrorMessage(now, codeFreezeBeginMoment, codeFreezeEndMoment))
+    process.exit(1);
   }
 }
 
