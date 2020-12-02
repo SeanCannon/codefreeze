@@ -37,12 +37,10 @@ if (codeFreezeBiWeekly) {
   const isWeekOdd  = moment().week() % 2 === 1,
         isWeekEven = !isWeekOdd;
   if ((codeFreezeBiWeeklyOdd && isWeekEven) || (codeFreezeBiWeeklyEven && isWeekOdd)) {
-    console.error(codeFreezeErrorMessage);
-    process.exit(1);
+    process.exit(0);
   }
 }
 
 if (now.isBetween(codeFreezeBeginMoment, codeFreezeEndMoment)) {
   process.exit(0);
 }
-

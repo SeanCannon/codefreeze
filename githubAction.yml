@@ -13,13 +13,17 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.18.4]
 
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v1.4.4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: node ./node_modules/codefreeze/index
+      - run: npm install -g moment codefreeze@1.0.0 && npm list -g
+      - run: |
+          set -a
+          . GITHUB_ENV
+          set +a
+          node /opt/hostedtoolcache/node/12.18.4/x64/lib/node_modules/codefreeze/index

@@ -41,6 +41,7 @@ CODE_FREEZE_BI_WEEKLY_WEEK=odd
 
 # CHANGELOG
  - 1.0.0 - initial commit
+ - 1.0.1 - fix bi-weekly bug
 
 # PLANNED ENHANCEMENTS
  - Support multiple code freezes per week
