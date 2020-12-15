@@ -11,4 +11,5 @@
  - 1.0.10 - update readme
  - 1.0.11 - update readme
  - 1.0.12 - fix logic where code freeze crosses over weekends
- - 1.0.13 - fix logic where code freeze crosses over weekends
+ - 1.0.13 - make .github postinstall path relative
+ - 1.0.14 - fix changelog

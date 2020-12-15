@@ -1,6 +1,6 @@
 {
   "name": "codefreeze",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simple resources to help enforce code freeze schedules.",
   "devDependencies" : {
     "coveralls": "^3.0.7",
