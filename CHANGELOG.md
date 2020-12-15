@@ -13,3 +13,4 @@
  - 1.0.12 - fix logic where code freeze crosses over weekends
  - 1.0.13 - make .github postinstall path relative
  - 1.0.14 - fix changelog
+ - 1.0.15 - replace $INIT_CWD
