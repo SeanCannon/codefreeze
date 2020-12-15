@@ -1,13 +1,19 @@
 {
   "name": "codefreeze",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Simple resources to help enforce code freeze schedules.",
+  "devDependencies" : {
+    "coveralls": "^3.0.7",
+    "jasmine": "^2.4.1",
+    "nyc": "^14.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/seancannon/codefreeze.git"
   },
-  "main": "index.js",
+  "main": "codefreeze.js",
   "scripts": {
+    "test": "./node_modules/.bin/nyc --reporter=lcov --reporter=text-summary ./node_modules/.bin/jasmine",
     "sample": "export CODE_FREEZE_DAY_BEGIN=Thursday CODE_FREEZE_HOUR_BEGIN=6 CODE_FREEZE_DAY_END=Monday CODE_FREEZE_HOUR_END=11 && node index",
     "postinstall": "mkdir -p $INIT_CWD/.github/workflows/ && cp codefreezeGithubAction.yml $INIT_CWD/.github/workflows/codefreezeGithubAction.yml"
   },

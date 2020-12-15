@@ -10,3 +10,4 @@
  - 1.0.9 - enhance readme and rename yml file
  - 1.0.10 - update readme
  - 1.0.11 - update readme
+ - 1.0.12 - fix logic where code freeze crosses over weekends
