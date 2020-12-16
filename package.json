@@ -1,6 +1,6 @@
 {
   "name": "codefreeze",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Simple resources to help enforce code freeze schedules.",
   "devDependencies" : {
     "coveralls": "^3.0.7",
@@ -15,7 +15,7 @@
   "scripts": {
     "test": "./node_modules/.bin/nyc --reporter=lcov --reporter=text-summary ./node_modules/.bin/jasmine",
     "sample": "export CODE_FREEZE_DAY_BEGIN=Thursday CODE_FREEZE_HOUR_BEGIN=6 CODE_FREEZE_DAY_END=Monday CODE_FREEZE_HOUR_END=11 && node index",
-    "postinstall": "set -x && mkdir -p $INIT_CWD/.github/workflows/ && cp codefreezeGithubAction.yml $INIT_CWD/.github/workflows/codefreezeGithubAction.yml"
+    "postinstall": "set -x && mkdir -p ./.github/workflows/ && cp codefreezeGithubAction.yml ./.github/workflows/codefreezeGithubAction.yml"
   },
   "authors": [
     "seancannon"

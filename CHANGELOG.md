@@ -15,3 +15,4 @@
  - 1.0.14 - fix changelog
  - 1.0.15 - replace $INIT_CWD
  - 1.0.16 - add logging to postinstall
+ - 1.0.17 - fix postinstall cwd
