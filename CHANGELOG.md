@@ -17,3 +17,4 @@
  - 1.0.16 - add logging to postinstall
  - 1.0.17 - fix postinstall cwd
  - 1.0.18 - rollback and use $INIT_CWD again
+ - 1.0.19 - omit stacktrace from expected code freeze rejection error
